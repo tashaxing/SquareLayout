@@ -47,10 +47,11 @@ const int block_space = 4;
     //setup the square layout
     for(int i = 0; i < square_count; i++)
     {
-        
+        //comput the row and col index
         int row = i/col_count;
         int col = i%col_count;
         
+        //comput the size and position
         float block_size = (self.view.frame.size.width - block_space*col_count)/col_count;
         float x = block_space/2 + col*(block_size + block_space);
         float y = TOP_MARGIN + block_space/2 + row*(block_size + block_space);
@@ -69,19 +70,15 @@ const int block_space = 4;
         
         [button addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         
-        //set buttont title
+        //set button title
         [button setTitle:[self.squareData[i] objectForKey:@"title"] forState:UIControlStateNormal];
 //        [button setBackgroundColor:[UIColor greenColor]];
 
-        
         [block addSubview:button];
         
-        
-        
+        //add the button to the block
         [self.view addSubview:block];
     }
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
