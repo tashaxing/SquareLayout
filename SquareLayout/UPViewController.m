@@ -6,21 +6,22 @@
 //  Copyright © 2016年 yxhe. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "UPViewController.h"
 
 #define TOP_MARGIN 50
 
-const int square_count = 13; //we only have 13 logos, so this variable must < 13
+//we only have 13 logos, so this variable must < 13
+const int square_count = 13;
 const int col_count = 4;
 const int block_space = 4;
 
-@interface ViewController ()
+@interface UPViewController ()
 
-@property (nonatomic, strong) NSMutableArray *squareData; //the squares' title and logo
+@property (nonatomic, strong) NSMutableArray *squareData;
 
 @end
 
-@implementation ViewController
+@implementation UPViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
