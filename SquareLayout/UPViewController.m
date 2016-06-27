@@ -8,12 +8,15 @@
 
 #import "UPViewController.h"
 
+/******************global variables and macros*************/
 #define TOP_MARGIN 50
 
 //we only have 13 logos, so this variable must < 13
 const int square_count = 13;
 const int col_count = 4;
 const int block_space = 4;
+/**********************************************************/
+
 
 @interface UPViewController ()
 
@@ -23,10 +26,9 @@ const int block_space = 4;
 
 @implementation UPViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
     
     //parse the json file
     NSString* path = [[NSBundle mainBundle] pathForResource:@"LifeService" ofType:@"json"];
@@ -38,7 +40,9 @@ const int block_space = 4;
                                                  options:NSJSONReadingMutableContainers error:&error];
     
     if (!jsonObj || error)
+    {
         NSLog(@"JSON parse failed!");
+    }
     
     self.squareData = [jsonObj objectForKey:@"Record"];
     
